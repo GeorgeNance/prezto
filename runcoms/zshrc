@@ -1,10 +1,9 @@
-neofetch| lolcat -a -d 1
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block, everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 
 #
@@ -20,20 +19,39 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/george/.composer/vendor/bin:$PATH"
-source $HOME/.bash_aliases
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/george/.composer/vendor/bin:$PATH:/Users/george/Library/Python/2.7/bin"
+
 eval $(thefuck --alias)
 
-  # Set Spaceship ZSH as a prompt
-  #autoload -U promptinit; promptinit
-  #prompt spaceship
+#alias
+source "${ZDOTDIR:-$HOME}/.zprezto/aliases"
+
+alias bwpr="/Users/george/bin/bw_pr"
+  #Set Spaceship ZSH as a prompt
+  autoload -U promptinit; promptinit
+  prompt spaceship
 
  source ~/.iterm2_shell_integration.zsh
 
-# Load Nerd Fonts with Powerlevel9k theme for Zsh
-POWERLEVEL9K_MODE='nerdfont-complete'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
+source $(dirname $(gem which colorls))/tab_complete.sh
+
+
+
+#Tiny Care Terminal
+
+export TTC_WEATHER="85282"
+export TTC_SAY_BOX="/Users/george/.zprezto/runcoms/panda.ansi"
+
+# Twitter api keys
+export TTC_CONSUMER_KEY='SRbJcI8bxmaEOHI09esL0E8kk'
+export TTC_CONSUMER_SECRET='r6IUgNzKCwvQ1avGl5ZLUgt1TDpBlCuH0QsjYyXj0B6ya3toZl'
+export TTC_ACCESS_TOKEN='313404490-cLmC81Hod93jEUq9jYDoYS8NgbSpGmw7iZP8T1Kl'
+export TTC_ACCESS_TOKEN_SECRET='NW5OYOzKfg4NLdGlbnZVQVHlNnMIfAdgUE5Vc0eoq08Yo'
+
+export TTC_REPOS="/Users/george/Developer"
+export TTC_CELSIUS="false"

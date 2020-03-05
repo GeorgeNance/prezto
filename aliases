@@ -1,0 +1,8 @@
+alias lf="ls -alh"
+alias youtube-dl="youtube-dl --write-thumbnail --add-metadata"
+alias add_ssh_key="~/bin/add_ssh_key.sh"
+alias cat="cat|lolcat"
+alias ls="ls |lolcat"
+alias ezsh="code ${ZDOTDIR:-$HOME}/.zprezto"
+alias lc="colorls -lA --sd"
+alias l="colorls"
